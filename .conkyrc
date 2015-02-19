@@ -1,0 +1,50 @@
+#avoid flicker
+double_buffer yes
+
+#own window to run simultaneous 2 or more conkys
+own_window  yes
+own_window_transparent false
+own_window_argb_visual true
+own_window_argb_value 224
+own_window_type desktop
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+#borders
+draw_borders no
+border_margin 0
+
+#shades
+draw_shades no
+
+#position
+gap_x 10
+gap_y 10
+alignment br
+
+#behaviour
+update_interval 1
+
+#colour
+default_color  b5b5b5
+#default_shade_color 000000
+own_window_colour 141414
+
+#font
+use_xft yes
+xftfont consolas:size=7
+uppercase no
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+#to prevent window from moving
+use_spacer left
+minimum_size 1346 8
+maximum_size 1346 768
+
+mpd
+mpd_host localhost
+mpd_port 6600
+
+TEXT
+KERNEL:${color 6699cc}${kernel}${color} UPTIME:${color 6699cc}${uptime_short}${color} UPDATES:${color 6699cc}${execpi 1800 checkupdates | wc -l}$color CPU 0:${color 6699cc}${cpu cpu1}%${color} 1:${color 6699cc}${cpu cpu2}%${color} 2:${color 6699cc}${cpu cpu3}%${color} 3:${color 6699cc}${cpu cpu4}%${color} TEMP:${color 6699cc}${execi 60 sensors | grep 'Physical id 0' | cut -c18-19 ;}°C${color} RAM:${color 6699cc}${memperc}%${color} SWAP:${color 6699cc}${swapperc}%${color} DISK /:${color 6699cc}${fs_used_perc /}% ${color} /home:${color 6699cc}${fs_used_perc /home}%${color}${alignr}${if_existing /proc/net/route wlp3s0}WLAN ${color 6699cc}${wireless_essid wlp3s0}${wireless_link_qual_perc wlp3s0}% ${color}${color 6699cc}${wireless_bitrate wlp3s0}${color}${color 6699cc} ${addr wlp3s0}${color} (↑${color 6699cc}${upspeed wlp3s0}/s${color})(↓${color 6699cc}${downspeed wlp3s0}/s${color})${endif}${if_existing /proc/net/route enp0s25}LAN${color 6699cc} ${addr enp0s25}${color} (↑${color 6699cc}${upspeed enp0s25}/s${color})(↓${color 6699cc}${downspeed enp0s25}/s${color})${endif} DESKTOP:${color 6699cc}${desktop}${color} BATT:${color 6699cc} ${battery_percent BAT0}% ${battery_time BAT0}${color}
