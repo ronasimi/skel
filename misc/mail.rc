@@ -1,0 +1,6 @@
+set ssl-method=auto
+set smtp=smtp.gmail.com:587
+set smtp-auth=plain
+set smtp-auth-user=ron.asimi@gmail.com
+set smtp-auth-password=********
+set smtp-use-starttls
