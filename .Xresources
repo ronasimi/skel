@@ -91,7 +91,7 @@ URxvt*font: xft:Inconsolata for Powerline-9
 ! URxvt*mapAlert: boolean
 
 ! True: set the urgency hint for the wm on receipt of a bell
-! URxvt*urgentOnBell: boolean
+URxvt*urgentOnBell: true
 
 ! True: use visual bell on receipt of a bell character; option -vb.
 ! URxvt*visualBell: boolean
