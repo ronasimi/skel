@@ -1,0 +1,13 @@
+[Unit]
+Description=Create AP Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash create_ap wlp3s0 enp0s25 kenobi_ap ****** --no-virt
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
