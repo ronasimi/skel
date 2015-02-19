@@ -2,11 +2,15 @@ zsh
 pkgfile
 vim
 tmux
+awesome
+vicious
 conky
 xdg-user-dirs
 ranger
 w3m
 firefox
+mpv
+feh
 
 lain-git
 unagi
