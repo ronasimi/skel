@@ -1,7 +1,5 @@
 zsh
 pkgfile
-awesome
-vicious
 vim
 tmux
 conky
@@ -9,9 +7,12 @@ xdg-user-dirs
 ranger
 w3m
 
+awesome-git
+vicious-git
+lain-git
+unagi
 rxvt-unicode-patched
 create_ap
-lain-git
 terminess-powerline-font-git
 python-powerline-git
 rtorrent-color
