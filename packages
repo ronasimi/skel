@@ -5,6 +5,9 @@ vicious
 vim
 tmux
 conky
+xdg-user-dirs
+ranger
+w3m
 
 rxvt-unicode-patched
 create_ap
