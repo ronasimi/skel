@@ -4,6 +4,9 @@ vim
 tmux
 awesome
 vicious
+rlwrap
+dex
+imagemagick
 conky
 xdg-user-dirs
 ranger
@@ -15,6 +18,7 @@ feh
 lain-git
 unagi
 rxvt-unicode-patched
+urxvt-wheel
 create_ap
 terminess-powerline-font-git
 python-powerline-git

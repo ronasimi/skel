@@ -1,5 +1,5 @@
 ! Compile xft: Attempt to find a visual with the given bit depth;
-URxvt*depth: 32
+!URxvt*depth: 32
 
 ! Compile xft: Turn on/off double-buffering for xft (default
 ! URxvt*buffered: boolean
@@ -217,10 +217,10 @@ URxvt*scrollBar: false
 ! URxvt*answerbackString: string
 
 ! Turn on/off secondary screen (default enabled).
-! URxvt*secondaryScreen: boolean
+URxvt*secondaryScreen: true
 
 ! Turn on/off secondary screen scroll (default enabled). If this
-! URxvt*secondaryScroll: boolean
+URxvt*secondaryScroll: false
 
 ! Turn on/off hold window after exit support. If enabled, urxvt will
 ! URxvt*hold: boolean
