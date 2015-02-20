@@ -8,7 +8,7 @@
 URxvt*geometry: 80x24
 
 ! Use the specified colour as the windows background colour [default
-!URxvt*background: [100]#222222
+URxvt*background: [100]#222222
 
 ! Use the specified colour as the windows foreground colour [default
 !URxvt*foreground: #FFFFFF
@@ -349,7 +349,7 @@ URxvt*iso14755: false
     #define S_base3       S_rebase3
 #endif
                   
-*background:            S_base03
+!*background:            S_base03
 *foreground:            S_base00
 *fading:                40
 *fadeColor:             S_base03
