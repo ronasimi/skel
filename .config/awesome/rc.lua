@@ -18,6 +18,8 @@ local menubar = require("menubar")
 vicious = require("vicious")
 -- Volume
 require("volume")
+-- Net widgets
+local net_widgets = require("net_widgets")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -192,6 +194,14 @@ for s = 1, screen.count() do
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
+    -- Wireless widget
+    net_wireless = net_widgets.wireless({interface="wlp3s0"})
+    
+    -- Wired Widget
+    net_wired = net_widgets.indicator({
+         interfaces  = {"enp0s25", "another_interface", "and_another_one"},
+         timeout     = 5
+    })
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
 
@@ -204,6 +214,8 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     right_layout:add(powerline_widget)
+    right_layout:add(net_wireless)
+    right_layout:add(net_wired)
     right_layout:add(volume_widget)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
 
