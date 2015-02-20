@@ -17,6 +17,14 @@
 				}
 			},
 			{
+				"function": "powerline.segments.common.bat.battery",
+				"priority": 10,
+				"args": {
+					"steps": "5",
+					"gamify": true
+				}
+			},
+			{
 				"function": "powerline.segments.common.mail.email_imap_alert",
 				"priority": 10,
 				"args": {
