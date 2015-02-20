@@ -231,7 +231,11 @@ URxvt*secondaryScroll: false
 ! Compile frills: Associate string with keysym sym. The intervening
 ! URxvt*keysym.sym: string
 
-! URxvt*perl-ext-common: string
+URxvt*keysym.C-C: perl:clipboard:copy
+URxvt*keysym.C-V: perl:clipboard:paste
+URxvt*keysym.C-A-V: perl:clipboard:paste_escaped
+
+URxvt*perl-ext-common: default,clipboard
 
 ! Comma-separated list(s) of perl extension scripts (default:
 ! URxvt*perl-ext: string
@@ -261,7 +265,7 @@ URxvt*secondaryScroll: false
 ! URxvt*override-redirect: boolean
 
 ! Turn on/off ISO 14755 (default enabled).
-! URxvt*iso14755: boolean
+URxvt*iso14755: false
 
 ! Turn on/off ISO 14755 5.2 mode (default enabled).
 ! URxvt*iso14755_52: boolean
