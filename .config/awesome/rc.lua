@@ -16,6 +16,8 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 -- Vicious
 vicious = require("vicious")
+-- Volume
+require("volume")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -109,6 +111,7 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "&terminal", terminal },
                                     { "&chrome", "/usr/bin/google-chrome-stable" },
+                                    { "&firefox", "/usr/bin/firefox" },
                                     { require("menugen").build_menu() }
                                   }
                         })
@@ -200,8 +203,9 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(powerline_widget)
+    right_layout:add(volume_widget)
+    if s == 1 then right_layout:add(wibox.widget.systray()) end
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()

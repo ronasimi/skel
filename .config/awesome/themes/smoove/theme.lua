@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Powerline Consolas 8"
+theme.font          = "Powerline Consolas 9"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#222222"
@@ -51,6 +51,9 @@ theme.menu_width  = 100
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
+
+-- Remove icons from tasklist
+theme.tasklist_disable_icon = true
 
 -- Define the image to load
 theme.titlebar_close_button_normal = "/usr/share/awesome/themes/default/titlebar/close_normal.png"
