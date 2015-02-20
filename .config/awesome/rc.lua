@@ -14,8 +14,9 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
--- Volume Widget
-require("volume")
+-- Vicious
+vicious = require("vicious")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -42,13 +43,23 @@ end
 -- }}}
 
 -- {{{ Variable definitions
+-- localization
+os.setlocale(os.getenv("LANG"))
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/smoove/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/smoove/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
+
+-- user defined
+browser    = "google-chrome-stable"
+gui_editor = "gvim"
+graphics   = "gimp"
+mail       = terminal .. " -e mutt "
+
+
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -61,6 +72,7 @@ modkey = "Mod4"
 local layouts =
 {
     lain.layout.uselesstile,
+    lain.layout.uselessfair,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.floating,
 }
@@ -75,11 +87,13 @@ end
 -- }}}
 
 -- {{{ Tags
--- Define a tag table which hold all screen tags.
-tags = {}
+tags = {
+   names = { "one", "two", "three", "four", "five"},
+   layout = { layouts[1], layouts[2], layouts[3], layouts[1], layouts[4] }
+}
+
 for s = 1, screen.count() do
-    -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3 }, s, layouts[1])
+   tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
@@ -94,7 +108,8 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "&terminal", terminal },
-                                    { "&chrome", "/usr/bin/google-chrome-stable" }
+                                    { "&chrome", "/usr/bin/google-chrome-stable" },
+                                    { require("menugen").build_menu() }
                                   }
                         })
 
@@ -145,9 +160,7 @@ mytasklist.buttons = awful.util.table.join(
                                                   instance:hide()
                                                   instance = nil
                                               else
-                                                  instance = awful.menu.clients({
-                                                      theme = { width = 250 }
-                                                  })
+                                                  instance = awful.menu.clients({ width=250 })
                                               end
                                           end),
                      awful.button({ }, 4, function ()
@@ -188,7 +201,6 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(volume_widget)
     right_layout:add(powerline_widget)
 
     -- Now bring it all together (with the tasklist in the middle)

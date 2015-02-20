@@ -4,20 +4,20 @@
 
 theme = {}
 
-theme.font          = "Powerline Consolas 9"
+theme.font          = "Powerline Consolas 8"
 
 theme.bg_normal     = "#222222"
-theme.bg_focus      = "#000000"
+theme.bg_focus      = "#222222"
 theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_minimize   = "#222222"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = "#657b83"
+theme.fg_focus      = "#b58900"
 theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_minimize   = "#657b83"
 
-theme.border_width  = 1
+theme.border_width  = 0
 theme.border_normal = "#000000"
 theme.border_focus  = "#000000"
 theme.border_marked = "#91231c"
@@ -76,7 +76,7 @@ theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/def
 theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = "~/Pictures/meh.ro10888.png"
+theme.wallpaper = "~/Pictures/Yosemite.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"
