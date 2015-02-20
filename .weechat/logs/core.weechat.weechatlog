@@ -1,0 +1,18 @@
+2015-02-20 08:24:44	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-02-20 08:24:44	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-02-20 08:24:44		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-02-20 08:24:56	=!=	You can not write text in this buffer
+2015-02-20 08:24:58	=!=	You can not write text in this buffer
+2015-02-20 08:25:00	=!=	You can not write text in this buffer
+2015-02-20 08:25:02	=!=	You can not write text in this buffer
+2015-02-20 08:25:44		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-02-20 08:26:14		script: downloading list of scripts...
+2015-02-20 08:26:16		script: 279 scripts for WeeChat 1.1.1
+2015-02-20 08:26:17		perl: loading script "/home/ron/.weechat/perl/iset.pl"
+2015-02-20 08:26:17		perl: registered script "iset", version 3.6 (Interactive Set for configuration options)
+2015-02-20 08:26:17		New key binding (context "mouse"): @chat(perl.iset):button1 => hsignal:iset_mouse
+2015-02-20 08:26:17		New key binding (context "mouse"): @chat(perl.iset):button2* => hsignal:iset_mouse
+2015-02-20 08:26:17		New key binding (context "mouse"): @chat(perl.iset):wheeldown => /repeat 5 /iset **down
+2015-02-20 08:26:17		New key binding (context "mouse"): @chat(perl.iset):wheelup => /repeat 5 /iset **up
+2015-02-20 08:26:41	=!=	You can not write text in this buffer
+2015-02-20 08:26:45		perl: scripts unloaded
