@@ -1,3 +1,6 @@
+# vi mode
+bindkey -v
+
 # TERMINAL TYPE
 export TERM='xterm-256color'
 

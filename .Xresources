@@ -5,10 +5,10 @@
 ! URxvt*buffered: boolean
 
 ! Create the window with the specified X window geometry [default
-URxvt*geometry: 80x24
+!URxvt*geometry: 80x24
 
 ! Use the specified colour as the windows background colour [default
-URxvt*background: [100]#222222
+URxvt*background: [100]#1a1a1a
 
 ! Use the specified colour as the windows foreground colour [default
 !URxvt*foreground: #FFFFFF
@@ -136,7 +136,7 @@ URxvt*scrollBar: false
 ! URxvt*saveLines: number
 
 ! Internal border of number pixels. This resource is limited to 100;
-! URxvt*internalBorder: number
+URxvt*internalBorder: 0
 
 ! External border of number pixels. This resource is limited to 100;
 ! URxvt*externalBorder: number
@@ -231,6 +231,8 @@ URxvt*secondaryScroll: false
 ! Compile frills: Associate string with keysym sym. The intervening
 ! URxvt*keysym.sym: string
 
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
 URxvt*keysym.C-C: perl:clipboard:copy
 URxvt*keysym.C-V: perl:clipboard:paste
 URxvt*keysym.C-A-V: perl:clipboard:paste_escaped
