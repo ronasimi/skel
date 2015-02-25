@@ -137,6 +137,32 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Modified Solarized dark color scheme
+# ------------------------------------
+function solar
+{
+   if [ "$TERM" = "linux" ]
+   then
+    	echo -en "\e]P8262626" #_grey    base03
+  	echo -en "\e]P01c1c1c" # black   base02
+      	echo -en "\e]PA586e75" # green   base01
+      	echo -en "\e]PB657b83" # yellow  base00
+      	echo -en "\e]PC839496" # blue    base0
+      	echo -en "\e]PE93a1a1" # cyan    base1
+      	echo -en "\e]P7eee8d5" #*grey    base2
+      	echo -en "\e]PFfdf6e3" # white   base3
+      	echo -en "\e]P3b58900" # brown   yellow
+      	echo -en "\e]P9cb4b16" # red     orange
+      	echo -en "\e]P1dc322f" #_red     red
+      	echo -en "\e]P5d33682" #_magenta magenta
+      	echo -en "\e]PD6c71c4" # magenta violet
+      	echo -en "\e]P4268bd2" #_blue    blue
+      	echo -en "\e]P62aa198" #_cyan    cyan
+      	echo -en "\e]P2859900" #_green   green
+      	clear #for artifacting
+   fi
+}
+
 # PATHS
 export PATH=/usr/local/bin:$PATH
 export PATH=/home/ron/.bin:$PATH
