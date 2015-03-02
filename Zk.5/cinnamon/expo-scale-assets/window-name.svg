@@ -15,7 +15,7 @@
    height="24"
    id="svg11300"
    sodipodi:version="0.32"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r"
    sodipodi:docname="window-name.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
@@ -30,8 +30,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="15.328321"
-     inkscape:cx="4.7793498"
-     inkscape:cy="11.792806"
+     inkscape:cx="-4.1257351"
+     inkscape:cy="11.662329"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
@@ -142,6 +142,6 @@
        inkscape:connector-curvature="0"
        id="path3754"
        d="m 0,276 0,24 24,0 0,-24 z m 1,1 22,0 0,22 -22,0 z"
-       style="opacity:0.1;fill:#ffffff;fill-opacity:1;stroke:none" />
+       style="opacity:0.05;fill:#ffffff;fill-opacity:1;stroke:none" />
   </g>
 </svg>

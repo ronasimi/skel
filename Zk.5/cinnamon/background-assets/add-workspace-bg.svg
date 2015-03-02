@@ -15,7 +15,7 @@
    height="24"
    id="svg11300"
    sodipodi:version="0.32"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r"
    sodipodi:docname="add-workspace-bg.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
@@ -30,8 +30,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="15.328321"
-     inkscape:cx="5.0403046"
-     inkscape:cy="11.792806"
+     inkscape:cx="-3.8647803"
+     inkscape:cy="11.662329"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
@@ -137,7 +137,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="opacity:0.1;fill:#ffffff;fill-opacity:1;stroke:none"
+       style="opacity:0.05;fill:#ffffff;fill-opacity:1;stroke:none"
        d="M 0,0 0,24 24,24 24,23 1,23 1,1 24,1 24,0 z"
        id="path3754"
        inkscape:connector-curvature="0"

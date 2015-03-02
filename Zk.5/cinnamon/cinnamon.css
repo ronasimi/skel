@@ -1,3 +1,14 @@
+@import url(third-party-APPLET-stylesheets/weather.css);
+@import url(third-party-APPLET-stylesheets/system-tray-collapsible.css);
+@import url(third-party-APPLET-stylesheets/configurable-menu.css);
+@import url(third-party-APPLET-stylesheets/slingshot.css);
+@import url(third-party-APPLET-stylesheets/xcenter.css);
+@import url(third-party-APPLET-stylesheets/stopwatch.css);
+@import url(third-party-DESKLET-stylesheets/sticky-notes.css);
+@import url(third-party-DESKLET-stylesheets/reddit-reader.css);
+@import url(third-party-DESKLET-stylesheets/calculator.css);
+@import url(third-party-EXTENSION-stylesheets/g-tile.css);
+
 stage {
     font-family: Segoe UI, sans-serif;
     font-size: 9pt;
@@ -66,13 +77,15 @@ StScrollBar StButton#hhandle {
     border: 1px solid rgba(255, 255, 255, .15);
     color: #fff;
     font-size: 8pt;
-    font-weight: bold;    
+    font-weight: bold;
     text-align: center;
 }   
 /* ===================================================================
- * Switchers
+ * Switchers + Checkboxes + Radio buttons
  * ===================================================================*/
- 
+
+/*---switchers---*/
+
 .toggle-switch {
     width: 32px;
     height: 20px;
@@ -96,6 +109,68 @@ StScrollBar StButton#hhandle {
 .toggle-switch-intl:checked {
     background-image: url("control-assets/on.svg");
     background-size: contain;
+}
+
+/*---checkboxes---*/
+ 
+.check-box CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 16px;
+}
+
+.check-box StLabel {
+    padding-top: 1px;
+}
+
+.check-box StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("control-assets/checkbox.svg");
+}
+
+.check-box:focus StBin {
+    background-image: url("control-assets/checkbox-focused.svg");
+}
+
+.check-box:checked StBin {
+    background-image: url("control-assets/checkbox-checked.svg");
+}
+
+.check-box:focus:checked StBin {
+    background-image: url("control-assets/checkbox-checked-focused.svg");
+}
+
+.check-box StLabel {
+   font-weight: normal;
+}
+
+/*---radio buttons---*/
+
+.radiobutton CinnamonGenericContainer {
+    spacing: .2em;
+    min-height: 16px;
+}
+
+.radiobutton StLabel {
+    padding-top: 1px;
+}
+
+.radiobutton StBin {
+    width: 16px;
+    height: 16px;
+    background-image: url("control-assets/radiobutton.svg");
+}
+
+.radiobutton:focus StBin {
+    background-image: url("control-assets/radiobutton-focused.svg");
+}
+
+.radiobutton:checked StBin {
+    background-image: url("control-assets/radiobutton-checked.svg");
+}
+
+.radiobutton:focus:checked StBin {
+    background-image: url("control-assets/radiobutton-checked-focused.svg");
 }
 /* ===================================================================
  * PopupMenu (popupMenu.js) 
@@ -168,11 +243,17 @@ StScrollBar StButton#hhandle {
 }
 
 .popup-combo-menu {
+    border-image: url("background-assets/popup.svg") 7;
+    padding: 1em .2em;
+    color: #fff;
 }
+/* The remaining popup-menu sizing is all done in ems, so that if you
+ * override .popup-menu.font-size, everything else will scale with it.
+ */
 
 .popup-menu-content {
     border-image: url("background-assets/popup.svg") 7;
-    padding: 1em 0;
+    padding: 1em .2em;
     color: #fff;
 }
 
@@ -206,8 +287,8 @@ StScrollBar StButton#hhandle {
 .popup-separator-menu-item {
     height: 1px;
     -gradient-height: 1px;
-    -gradient-start: rgba(255, 255, 255 , 0.1);
-    -gradient-end: rgba(255, 255, 255 , 0.1);
+    -gradient-start: rgba(255, 255, 255 , 0.06);
+    -gradient-end: rgba(255, 255, 255 , 0.06);
     -margin-horizontal: 2px;
 }
 
@@ -404,7 +485,7 @@ StScrollBar StButton#hhandle {
  * ===================================================================*/
 
 .expo-background {
-    background: url("expo-scale-assets/texture.png");
+    background: #282828 url("expo-scale-assets/grid.svg");
     background-repeat: repeat;
 }
 
@@ -599,13 +680,15 @@ StScrollBar StButton#hhandle {
  * ===================================================================*/
 
 .calendar {
-    padding: 6px 18px 8px 18px;
+    padding: .4em 1.6em;
+    padding-top: .8em;
     spacing-rows: 5px;
     spacing-columns: 5px;
 }
 
 .datemenu-date-label {
-    padding: .5em 0 .4em 0;
+    border-image: url("background-assets/dark-bg-spanned.svg") 6;
+    padding: .6em 0 .5em 0;
     font-size: 10pt;
     font-weight: bold;
     text-align: center;
@@ -662,7 +745,7 @@ StScrollBar StButton#hhandle {
 .calendar-day-heading {
     font-size: 9pt;
     color: #fff;
-    padding-top: 10px;
+    padding-top: 8px;
     padding-bottom: 6px;
     height: 15px;
 }
@@ -1168,7 +1251,7 @@ StScrollBar StButton#hhandle {
 
 .run-dialog > * {
     border-image: url("background-assets/popup.svg") 7;
-    padding: 14px;
+    padding: 12px;
 }
 
 .run-dialog-label {
@@ -1176,7 +1259,8 @@ StScrollBar StButton#hhandle {
 }
 
 .run-dialog-error-box {
-    padding-top: 15px;
+    padding: 2px;
+    padding-top: 10px;
     spacing: 5px;
 }
 
@@ -1285,13 +1369,24 @@ StScrollBar StButton#hhandle {
     color: #888;
 }
 /* ===================================================================
+ * Looking Glass dialog
+ * ===================================================================*/
+
+#LookingGlassDialog {
+    border-image: url("background-assets/popup.svg") 7;
+    padding: 14px;
+    color: #fff;
+}
+/* ===================================================================
  * Magnifier
  * ===================================================================*/
 
 .magnifier-zoom-region {
+    border: 4px red;
 }
 
 .magnifier-zoom-region.full-screen {
+    border: none;
 }
 /* ===================================================================
  * On screen keyboard
@@ -1512,7 +1607,7 @@ StScrollBar StButton#hhandle {
 
 .window-list-item-box {
     color: #fff;
-    font-weight: regular;
+    font-weight: bold;
     padding-left: 4px;
     padding-right: 4px;
 }
@@ -1828,85 +1923,22 @@ StScrollBar StButton#hhandle {
 .applet-box:hover > .applet-icon {
 }
 /* ===================================================================
- * Checkboxes and radio buttons
- * ===================================================================*/
- 
-.check-box CinnamonGenericContainer {
-    spacing: .2em;
-    min-height: 30px;
-    padding-top: 2px;
-}
-
-.check-box StBin {
-    width: 16px;
-    height: 16px;
-    background-image: url("control-assets/checkbox.svg");
-}
-
-.check-box:focus StBin {
-    background-image: url("control-assets/checkbox-focused.svg");
-}
-
-.check-box:checked StBin {
-    background-image: url("control-assets/checkbox-checked.svg");
-}
-
-.check-box:focus:checked StBin {
-    background-image: url("control-assets/checkbox-checked-focused.svg");
-}
-
-.check-box StLabel {
-   font-weight: normal;
-}
-
-.radiobutton CinnamonGenericContainer {
-    spacing: .2em;
-    height: 26px;
-    padding-top: 2px;
-}
-
-.radiobutton StBin {
-    width: 16px;
-    height: 16px;
-    background-image: url("control-assets/radiobutton.svg");
-}
-
-.radiobutton:focus StBin {
-    background-image: url("control-assets/radiobutton-focused.svg");
-}
-
-.radiobutton:checked StBin {
-    background-image: url("control-assets/radiobutton-checked.svg");
-}
-
-.radiobutton:focus:checked StBin {
-    background-image: url("control-assets/radiobutton-checked-focused.svg");
-}
-
-.radiobutton StLabel {
-    padding-top: 4px;
-    font-size: 0.9em;
-    box-shadow: none;
-}
-/* ===================================================================
  * User Applet
  * ===================================================================*/
 
 .user-box {
-    padding: .4em 1.6em;
-    padding-bottom: .6em;
+    border-image: url("background-assets/dark-bg-spanned+padding-bottom.svg") 12;
+    padding: .8em 1.6em;
+    padding-bottom: 1.5em;
     spacing: 10px;
 }
 
 .user-icon {
     width: 32px;
     height: 32px;
-    background-color: rgba(0, 0, 0, .4);
-    border: 1px solid rgba(255, 255, 255, .4);
-    border-radius: 0;
+    border: none;
     padding: 0;
     border-radius: 0;
-    padding: 1px;
 }
 
 .user-label {
@@ -1926,989 +1958,4 @@ StScrollBar StButton#hhandle {
     padding: 10px;
     color: #fff;
     text-align: center;     
-}
-
-
-/* ##############################################################
- * ##############################################################
-    Third Party Spices
- * ##############################################################
- * ##############################################################*/
-
-
-
-/* ===================================================================
- * Calculator Desklet
- * ===================================================================*/
- 
-.calc-button {
-    border-image: url("buttons/button.svg") 7;
-    height: 30px;
-    width: 34px;
-    margin: 20px;
-    color: #fff;
-}
-
-.calc-button:hover {
-    border-image: url("buttons/button-hover.svg") 7;
-    margin: 20px;
-    color: #fff;
-}
-
-.calc-button:active {
-    border-image: url("buttons/button-pressed.svg") 7;
-    margin: 20px;
-    color: #fff;
-}
-
-.calc-button-padding {
-    padding: 2px;
-}
-
-.calc-mainBox {
-    padding: 0;
-}
-
-.calc-displayArea {
-    padding: 0;
-}
-
-.calc-displayWindow {
-    border-image: url("background-assets/sub.svg") 7;
-    padding: 10px;
-    padding-top: 4px;
-    padding-bottom: 6px;
-}
-
-.calc-displayWindow-rpn {
-    border-image: url("background-assets/sub.svg") 7;
-    padding: 10px;
-    padding-top: 4px;
-    padding-bottom: 6px;
-}
-
-.calc-displayText-primary {
-    font-size: 32px;
-    color: #fff;
-    text-align: right;
-}
-
-.calc-displayText-secondary {
-    font-size: 9px;
-    color: #888;
-    text-align: right;
-}
-
-.calc-displayText-operation {
-    font-size: 24px;
-    color: #fff;
-}
-
-.calc-displayText-status {
-    font-size: 8px;
-    color: #999;
-}
-
-.calc-displayText-rpn {
-    color: #fff;
-}
-
-.calc-stackArea {
-    height: 85px;
-}
-
-.calc-navigation-box {
-    padding: 0px 0px 0px 8px;
-    width: 22px;
-}
-
-.calc-navigation-icon {
-    color: #fff;
-    icon-size: 16px;
-}
-
-.calc-navigation-button {
-    border: none;
-}
-/* ===================================================================
- * Reddit-reader Desklet
- * ===================================================================*/
-
-.reddit-reader StScrollBar {
-    padding-left: 1px;
-    padding-right: 4px;
-}
-
-.reddit-reader {
-    border-image: url("background-assets/popup.svg") 7;
-    padding: 5px;
-    color: #fff;
-}
-
-.reddit-title-bar {
-    border-image: url("background-assets/sub.svg") 6;
-    padding: 10px;
-    font-size: 12pt;
-    font-weight: bold;
-}
-
-.reddit-header-icon {
-    padding-right: 6px;
-    icon-size: 16px;
-}
-
-.reddit-title {
-    padding-right: 6px;
-    font-size: 14pt;
-}
-
-.reddit-subtitle {
-    color: #888;
-}
-
-.reddit-posts-box {
-    spacing: 4px;
-    padding-left: 5px;
-    padding-right: 3px;
-    padding-top: 4px;
-}
-
-.reddit-post {
-    border-image: url("background-assets/dark-bg-top.svg") 7;
-    padding: 10px;
-    color: #fff;
-}
-
-.reddit-info-box {
-    border-image: url("background-assets/dark-bg-bottom.svg") 7;
-    padding: 10px;
-    padding-top: 0;
-    spacing: 10px;
-    font-size: 8pt;
-    color: #888;
-}
-/* ===================================================================
- * Sticky Notes Desklet
- * ===================================================================*/
-
-#sticky-scrollview StScrollBar {
-    padding: 0;
-    padding-left: 6px;
-}
-
-.sticky-button {
-    height: 24px;
-    width: 24px;
-}
-
-.sticky-button-selected {
-    border-image: none;
-    height: 24px;
-    width: 24px;
-}
-
-.sticky-button-selected * {
-    color: #8198af;
-}
-
-.sticky-button-box {
-    padding: 0;
-    padding-top: 2px;
-    height: 24px;
-}
-
-.sticky-main-box-staples {
-    border-image: url("background-assets/popup.svg") 7;
-    background-color: transparent;
-    border-radius: 0;
-    text-shadow: none;
-    min-width: 210px;
-    padding: 5px 11px;
-    padding-top: 0;
-    font-weight: bold;
-    color: #fff;
-}
-
-.sticky-main-box-none {
-    border-image: url("background-assets/popup.svg") 7;
-    background-color: transparent;
-    border-radius: 0;
-    text-shadow: none;
-    min-width: 210px;
-    padding: 5px 11px;
-    padding-top: 0;
-    font-weight: bold;
-    color: #fff;
-}
-
-.sticky-top-box {
-    font-weight: bold;
-    color: #fff;
-}
-
-.sticky-bottom-box {
-    font-weight: bold;
-    color: #fff;
-}
-
-.sticky-title-label {
-    padding: 0px 4px 0px 4px;
-    max-width: 100px;
-    text-align: center;
-}
-
-.sticky-information-label {
-    padding: 0px 4px 0px 4px;
-}
-
-.sticky-text-box {
-    background-gradient-direction: none;
-    box-shadow: inset 0 0 transparent;
-    border: 0 transparent;
-    border-radius: 0;
-    border-image: url("misc-assets/entry.svg") 7;
-    padding: 6px;
-}
-
-.sticky-text-box:active {
-    background-gradient-direction: none;
-    box-shadow: inset 0 0 transparent;
-    border: 0 transparent;
-    border-radius: 0;
-    border-image: url("misc-assets/entry-focused.svg") 7;
-    padding: 6px;
-}
-
-#sticky-note-entry {
-    padding: 6px;
-    color: #fff;
-    selected-color: #fff;
-    caret-color: #fff;
-    caret-size: 1px;
-    selection-background-color: #8198af;
-}
-/* ===================================================================
- * Weather Applet
- * ===================================================================*/
-
-.weather-menu .popup-menu-content {
-    border-image: url("background-assets/popup-outside.svg") 7;
-    padding: 4px 0;
-}
-
-.weather-menu .popup-separator-menu-item {
-    background-image: none;
-    height: 0;
-}
-
-.current {
-    border-image: url("background-assets/popup-inside-taller.svg") 7;
-    padding-top: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.forecast {
-    border-image: url("background-assets/popup-inside-taller.svg") 7;
-    padding-top: 4px;
-    padding-bottom: 18px;
-}
-
-.weather-current-location-link {
-    font-size: 12pt;
-}
-
-.weather-current-location-link:selected,
-.weather-current-location-link:hover {
-    background-gradient-direction: vertical;
-    background-gradient-start: rgba(255, 255, 255, 0);
-    background-gradient-end: rgba(255, 255, 255, 0);
-    color: #8198af;
-}
-
-.weather-current-summarybox {
-    padding-top: 0;
-    padding-bottom: 10px;
-}
-
-.weather-current-summary {
-    font-size: 35px;
-}
-
-.weather-current-databox {
-    padding-top: 15px;
-    padding-left: 30px;
-    font-size: 9pt;
-}
-
-.weather-current-icon {
-    padding: 0 30px;
-    padding-bottom: 15px;
-}
-
-.weather-current-iconbox {
-    padding: 1em;
-}
-
-.weather-icon {
-    padding-right: 5px;
-}
-
-.weather-icon-rtl {
-    padding-left: 5px;
-}
-
-.weather-current-databox-captions {
-    padding: 0;
-    padding-right: 5px;
-    spacing: 0;
-    font-size: 9pt;
-    color: #8198af;
-    text-align: right;
-}
-
-.weather-current-astronomy {
-    color: #888;
-    font-size: 9pt;
-}
-
-.weather-forecast-icon {
-    padding: 10px 15px 0 30px;
-    color: #fff;
-}
-
-.weather-forecast-databox {
-    padding: 14px 30px 0 0;
-    color: #fff;
-}
-
-.weather-forecast-day {
-    font-size: 10pt;
-    font-weight: bold;
-    color: #8198af;
-}
-/* ===================================================================
- * Configurable Menu Applet
- * ===================================================================*/
-
-.menu-main-box {
-    padding-top: 4px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 0;
-}
-
-/*---fixes for stylized & classic layouts---*/
-
-.menu-main-box-stylized,
-.menu-main-box-classic {
-    padding-top: 6px;
-    padding-left: 18px;
-    padding-right: 6px;
-    padding-bottom: 0;
-}
-
-.menu-categories-box-stylized,
-.menu-categories-box-classic {
-    padding-left: 10px;
-}
-
-.menu-search-box-stylized,
-.menu-search-box-classic {
-    padding-left: 0;
-    padding-top: 0;
-}
-
-.menu-top-box-stylized,
-.menu-top-box-classic {
-    padding-left: 10px;
-}
-
-/*---buttons---*/
-
-.menu-control-button {
-    border-image: url("buttons/button.svg") 7;
-    padding: 10px;
-}
-
-.menu-control-button-selected {
-    border-image: url("buttons/button-hover.svg") 7;
-    padding: 10px;
-}
-
-.menu-control-button:open {
-    border-image: url("buttons/button-pressed.svg") 7;
-    padding: 10px;
-}
-
-.menu-control-button-selected:open {
-    border-image: url("buttons/button-pressed.svg") 7;
-    padding: 10px;
-}
-/* ===================================================================
- * Slingshot Applet
- * ===================================================================*/
-
-.slingshot.popup-menu-content {
-    padding: 5px;
-}
-
-.slingshot .separator {
-    background-color: transparent;
-}
-
-/*--- Entries ---*/
-
-.slingshot .entry,
-.slingshot .entry:hover {
-    border-image: url("misc-assets/entry.svg") 6;
-    background-gradient-direction: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    height: 24px;
-    width: 220px;
-    color: rgba(255, 255, 255, .4);
-    caret-color: rgba(255, 255, 255, .4);
-    font-size: 9pt;
-    font-weight: normal;
-    padding: 5px 12px 4px 12px;
-}
-
-.slingshot .entry:focus {
-    border-image: url("misc-assets/entry-focused.svg") 6;
-    background-gradient-direction: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    height: 24px;
-    width: 220px;
-    color: #fff;
-    caret-color: #fff;
-    font-size: 10pt;
-    font-weight: bold;
-    caret-size: 1px;
-    selected-color: #fff;
-    selection-background-color: #668694;
-    padding: 5px 12px 4px 12px;
-}
-
-/*--- Buttons ---*/
-
-.slingshot .button {
-    border-image: url("buttons/button.svg") 7;
-    background-gradient-direction: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    font-size: 8pt;
-    padding: 8px;
-    padding-top: 9px;
-}
-
-.slingshot .button:hover {
-    border-image: url("buttons/button-hover.svg") 7;
-}
-
-.slingshot .button:active {
-    border-image: url("buttons/button-pressed.svg") 7;
-}
-
-.slingshot .button:checked {
-    border-image: url("buttons/button-focused.svg") 7;
-    font-weight: bold;
-}
-
-
-/*--- App Buttons ---*/
-
-.slingshot .button.app {
-    border-image: none;
-    border-width: 0;
-    font-size: 9pt;
-    padding: 0;
-}
-
-.slingshot .app:hover {
-    border-image: url("background-assets/hover.svg") 7;
-    background-color: transparent;
-}
-
-.slingshot .app:focus {
-    border-image: url("background-assets/hover.svg") 7;
-    background-color: transparent;
-}
-
-
-/*--- Sidebar Buttons ---*/
-
-.slingshot .sidebar {
-    padding-left: 8px;
-    padding-right: 3px;
-}
-
-.slingshot .sidebar .button {
-    border-image: none;
-    padding: 5px;
-    border-radius: 0;
-    border-top: 0;
-    border-right: 0;
-    border-bottom: 0;
-    border-color: transparent;
-    font-size: 9pt;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.slingshot .sidebar .button:hover,
-.slingshot .sidebar .button:hover:checked,
-.slingshot .sidebar .button:active:checked {
-    border-image: url("background-assets/hover.svg") 7;
-    border-color: transparent;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-.slingshot .sidebar .button:active,
-.slingshot .sidebar .button:hover:active {
-    background-color: transparent;
-    border-color: transparent;
-    box-shadow: inset 0 0 0 transparent;
-}
-
-.slingshot .sidebar .button:checked {
-    border-image: url("misc-assets/highlighted-mirrored.svg") 7;
-    border-color: transparent;
-    background-color: transparent;
-    box-shadow: none;
-    font-weight: bold;
-}
-
-.slingshot .entry,
-.slingshot .sidebar .button {
-    text-shadow: none;
-    icon-shadow: none;
-}
-
-
-/*--- Linked Buttons ---*/
-
-
-/* Middle button */
-
-.slingshot .linked .button {
-    border-image: url("buttons/linked-button-middle.svg") 7;
-    background-gradient-direction: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    color: #888;
-}
-
-.slingshot .linked .button:hover {
-    border-image: url("buttons/linked-button-middle-hover.svg") 7;
-}
-
-.slingshot .linked .button:active {
-    border-image: url("buttons/linked-button-middle-pressed.svg") 7;
-}
-
-.slingshot .linked .button:checked {
-    border-image: url("buttons/linked-button-middle-pressed.svg") 7;
-    color: #fff;
-}
-
-
-/* Leftmost button */
-
-.slingshot .linked .button:first-child {
-    border-image: url("buttons/linked-button-left.svg") 7;
-    background-gradient-direction: none;
-    background-color: transparent;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 6px;
-    padding-right: 5px;
-    color: #888;
-}
-
-.slingshot .linked .button:hover:first-child {
-    border-image: url("buttons/linked-button-left-hover.svg") 7;
-}
-
-.slingshot .linked .button:active:first-child {
-    border-image: url("buttons/linked-button-left-pressed.svg") 7;
-    border-right-width: 0;
-}
-
-.slingshot .linked .button:checked:first-child {
-    border-image: url("buttons/linked-button-left-pressed.svg") 7;
-    padding-right: 5px;
-    color: #fff;
-}
-
-
-/* Rightmost button */
-
-.slingshot .linked .button:last-child {
-    border-image: url("buttons/linked-button-right.svg") 7;
-    background-gradient-direction: none;
-    background-color: transparent;
-    border-right-width: 0;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 6px;
-    padding-left: 5px;
-    color: #888;
-}
-
-.slingshot .linked .button:hover:last-child {
-    border-image: url("buttons/linked-button-right-hover.svg") 7;
-}
-
-.slingshot .linked .button:active:last-child,
-.slingshot .linked .button:active:hover:last-child {
-    border-image: url("buttons/linked-button-right-pressed.svg") 7;
-    border-right-width: 0;
-}
-
-.slingshot .linked .button:checked:last-child {
-    border-image: url("buttons/linked-button-right-pressed.svg") 7;
-    padding-left: 5px;
-    color: #fff;
-}
-
-
-/* Linked single button */
-
-.slingshot .linked .button:only-child {
-    border-image: url("buttons/button.svg") 7;
-    background-gradient-direction: none;
-    background-color: transparent;
-    border-width: 0;
-    box-shadow: none;
-    border-radius: 0;
-    color: #888;
-}
-
-.slingshot .linked .button:hover:only-child {
-    border-image: url("buttons/button-hover.svg") 7;
-}
-
-.slingshot .linked .button:active:only-child {
-    border-image: url("buttons/button-pressed.svg") 7;
-}
-
-.slingshot .linked .button:checked:only-child {
-    border-image: url("buttons/button-pressed.svg") 7;
-    color: #fff;
-}
-/* ===================================================================
- * Places Center Applet
- * ===================================================================*/
-
-.xCenter-menu .popup-menu-content {
-    border-image: url("background-assets/popup-outside.svg") 4;
-    padding: 0;
-    max-height: 475px;
-}
-
-.xCenter-mainBox {
-    padding: 0 4px;
-    spacing: 0;
-}
-
-.xCenter-mainBox .popup-menu-item {
-    padding: .4em 1.6em;
-}
-
-.xCenter-mainBox .popup-menu-item:active {
-    border-image: url("background-assets/hover.svg") 7;
-}
-
-.xCenter-mainBox StScrollBar {
-    padding: 3px;
-    padding-right: 8px;
-}
-
-.xCenter-title {
-    border: 0 solid transparent;
-    border-bottom-width: 4px;
-    font-size: 9pt;
-    font-weight: bold;
-}
-
-.xCenter-pane {
-    border-image: url("background-assets/popup-inside-wider.svg") 7;
-    padding: 12px 0;
-}
-
-.xCenter-menuItemLabel {
-    max-width: 12em;
-}
-/* ===================================================================
- * System Tray Collapsible Applet
- * ===================================================================*/
- 
- .systray-collapsible-gradient {
-    background-gradient-direction: none;
-    background: transparent;
-    box-shadow: none;
-    border-radius: 6px; 
-    spacing: 2px;
-    padding: 0;
-}
-
-.systray-collapsible-gradient .popup-menu-icon {
-    icon-size: 16px;
-    color: #fff;
-    padding-left: 2px;
-    padding-right: 2px;
-}
-
-.systray-collapsible-gradient:focus {
-    background-gradient-direction: none;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-}
-
-.systray-collapsible-gradient:focus .popup-menu-icon {
-    color: #fff;
-    padding: 0;
-    padding-left: 2px;
-    padding-right: 2px;
-}
-
-.systray-collapsible-border {
-    border: 1px solid rgba(255, 255, 255, .4); 
-    border-radius: 6px; 
-    spacing: 2px;
-    padding-left: 3px;
-    padding-right: 2px;
-}
-
-.systray-collapsible-border:focus   {
-    border: 1px solid rgba(255, 255, 255, .5); 
-}
-/* ===================================================================
- * Stopwatch applet
- * ===================================================================*/
- 
-.stopwatch-ready,
-.stopwatch-ready:hover,
-.stopwatch-running,
-.stopwatch-running:hover,
-.stopwatch-paused,
-.stopwatch-day-exceeded,
-.stopwatch-running-day-exceeded,
-.stopwatch-paused-day-exceeded {
-    background-color: transparent;
-    padding: 3px 5px;
-}
-
-/*---top panel---*/
-
-.panel-top .stopwatch-ready:hover {
-    border-image: url("panel-assets/top-item.svg") 4;
-}
-
-.panel-top .stopwatch-running {
-    border-image: url("panel-assets/top-item.svg") 4;
-}
-
-.panel-top .stopwatch-running:hover {
-    border-image: url("panel-assets/top-item-hover.svg") 4;
-}
-
-.panel-top .stopwatch-paused {
-    border-image: url("panel-assets/top-item-red.svg") 4;
-}
-
-.panel-top .stopwatch-day-exceeded {
-    border-image: url("panel-assets/top-item-red.svg") 4;
-}
-
-.panel-top .stopwatch-running-day-exceeded {
-    border-image: url("panel-assets/top-item-red.svg") 4;
-}
-
-.panel-top .stopwatch-paused-day-exceeded {
-    border-image: url("panel-assets/top-item-red.svg") 4;
-}
-
-/*---bottom panel---*/
-
-.panel-bottom .stopwatch-ready:hover {
-    border-image: url("panel-assets/bottom-item.svg") 4;
-}
-
-.panel-bottom .stopwatch-running {
-    border-image: url("panel-assets/bottom-item.svg") 4;
-}
-
-.panel-bottom .stopwatch-running:hover {
-    border-image: url("panel-assets/bottom-item-hover.svg") 4;
-}
-
-.panel-bottom .stopwatch-paused {
-    border-image: url("panel-assets/bottom-item-red.svg") 4;
-}
-
-.panel-bottom .stopwatch-day-exceeded {
-    border-image: url("panel-assets/bottom-item-red.svg") 4;
-}
-
-.panel-bottom .stopwatch-running-day-exceeded {
-    border-image: url("panel-assets/bottom-item-red.svg") 4;
-}
-
-.panel-bottom .stopwatch-paused-day-exceeded {
-    border-image: url("panel-assets/bottom-item-red.svg") 4;
-}
-/* ===================================================================
- * GTile Extension
- * ===================================================================*/
- 
-.grid-panel {
-    border-image: url("background-assets/popup.svg") 7;
-    width:240px;
-    padding: 6px;
-}
-
-.grid-title {
-    padding: 4px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #fff;
-    text-align:center;
-}
-
-.table {
-}
-
-.table-element {
-    border-image: url("misc-assets/calendar-work-day.svg") 3;
-}
-
-.table-element:hover, .table-element:activate {
-    border-image: url("misc-assets/calendar-today.svg") 3;
-}
-
-.top-box {
-    padding: 4px;
-}
-
-.bottom-box {
-    padding: 10px;
-    display: block;
-}
-
-.very-bottom-box {
-    padding: 60px;
-    display: block;
-}
-
-.settings-label {  
-}
-
-.settings-label:hover {
-}
-
-.grid-preview {
-     background-color: transparent;
-     border-color: transparent;
-}
-
-.grid-preview:activate {
-    background-color: rgba(102, 153, 204, 0.35);
-    border: 1px solid #6699CC;
-}
-
-
-/*---buttons---*/
-
-.settings-button {
-    border-image: url("buttons/button.svg") 7;
-    padding: 3px;
-    width: 44 px;
-    height: 32px;
-    color: #fff;
-}
-
-.settings-button:activate {
-    border-image: url("buttons/button-pressed.svg") 7;
-}
-
-.settings-button:activate:hover {
-    border-image: url("buttons/button-pressed.svg") 7;
-}
-
-.settings-button:hover {
-    border-image: url("buttons/button-hover.svg") 7;
-}
-
-.close-button {
-    border-image: url("buttons/button.svg") 7;
-    background-image: url("misc-assets/auto-close.svg");
-    width: 24px;
-    height: 24px;
-}
-
-.close-button:hover {
-    border-image: url("buttons/button-hover.svg") 7;
-    background-image: url("misc-assets/auto-close.svg");
-    width: 24px;
-    height: 24px;
-}
-
-
-/*---icons---*/
-
-.tiling-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.tiling-icon:hover {
-    width: 24px;
-    height: 24px;
-}
-
-.tiling-icon:activate {
-    width: 24px;
-    height: 24px;
-}
-
-.animation-icon {
-    background-image: url("misc-assets/animation.svg");
-    width: 24px;
-    height: 24px;
-}
-
-.auto-close-icon {
-    background-image: url("misc-assets/auto-close.svg");
-    width: 24px;
-    height: 24px;
-}
-
-.action-main-list {
-    background-image: url("misc-assets/auto-tile-1.svg");
-    width: 24px;
-    height: 24px;
-}
-
-.action-two-list {
-    background-image: url("misc-assets/auto-tile-2.svg");
-    width: 24px;
-    height: 24px;
-}
-
-.action-scale {
-    width: 24px;
-    height: 24px;
 }

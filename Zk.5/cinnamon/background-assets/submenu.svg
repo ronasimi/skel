@@ -15,7 +15,7 @@
    height="24"
    id="svg11300"
    sodipodi:version="0.32"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r"
    sodipodi:docname="submenu.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
@@ -30,8 +30,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="21.06589"
-     inkscape:cx="12"
-     inkscape:cy="12"
+     inkscape:cx="-1.0542788"
+     inkscape:cy="11.90506"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
@@ -133,66 +133,66 @@
     <rect
        style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:none"
        id="rect5188"
-       width="14"
+       width="16"
        height="22"
-       x="5"
+       x="4"
        y="-299"
        transform="scale(1,-1)" />
     <rect
        style="opacity:0.03999999;fill:#ffffff;fill-opacity:1;stroke:none"
        id="rect3018"
-       width="12"
+       width="14"
        height="1"
-       x="6"
+       x="5"
        y="-277"
        transform="scale(1,-1)" />
     <rect
        y="-278"
-       x="5"
+       x="4"
        height="1"
-       width="14"
+       width="16"
        id="rect3020"
        style="opacity:0.5;fill:#000000;fill-opacity:1;stroke:none"
        transform="scale(1,-1)" />
     <rect
        style="opacity:0.35;fill:#000000;fill-opacity:1;stroke:none"
        id="rect3044"
-       width="14"
+       width="16"
        height="1"
-       x="5"
+       x="4"
        y="-279"
        transform="scale(1,-1)" />
     <rect
        y="-280"
-       x="5"
+       x="4"
        height="1"
-       width="14"
+       width="16"
        id="rect3046"
        style="opacity:0.12000002;fill:#000000;fill-opacity:1;stroke:none"
        transform="scale(1,-1)" />
     <rect
        transform="scale(1,-1)"
        y="-299"
-       x="5"
+       x="4"
        height="1"
-       width="14"
+       width="16"
        id="rect3065"
        style="opacity:0.35;fill:#000000;fill-opacity:1;stroke:none" />
     <rect
        transform="scale(1,-1)"
        style="opacity:0.12000002;fill:#000000;fill-opacity:1;stroke:none"
        id="rect3080"
-       width="14"
+       width="16"
        height="1"
-       x="5"
+       x="4"
        y="-298" />
     <rect
        transform="scale(1,-1)"
        y="-300"
-       x="6"
+       x="5"
        height="1"
-       width="12"
+       width="14"
        id="rect3082"
-       style="opacity:0.02000002;fill:#ffffff;fill-opacity:1;stroke:none" />
+       style="opacity:0.04;fill:#ffffff;fill-opacity:1;stroke:none" />
   </g>
 </svg>

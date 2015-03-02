@@ -16,7 +16,7 @@
    id="svg11300"
    sodipodi:version="0.32"
    inkscape:version="0.91 r"
-   sodipodi:docname="workspace-name.svg"
+   sodipodi:docname="dark-bg+padding.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
    style="display:inline;enable-background:new">
@@ -39,8 +39,8 @@
      inkscape:showpageshadow="false"
      inkscape:window-width="1600"
      inkscape:window-height="875"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-x="-1"
+     inkscape:window-y="24"
      width="400px"
      height="300px"
      inkscape:snap-nodes="true"
@@ -90,7 +90,7 @@
         <dc:source />
         <cc:license
            rdf:resource="" />
-        <dc:title />
+        <dc:title></dc:title>
         <dc:subject>
           <rdf:Bag />
         </dc:subject>
@@ -133,15 +133,15 @@
     <rect
        style="opacity:0.4;fill:#000000;fill-opacity:1;stroke:none"
        id="rect5188"
-       width="22"
-       height="22"
-       x="1"
-       y="277" />
+       width="12"
+       height="12"
+       x="6"
+       y="282" />
     <path
        sodipodi:nodetypes="cccccccccc"
        inkscape:connector-curvature="0"
        id="path3754"
-       d="m 0,276 0,24 24,0 0,-24 z m 1,1 22,0 0,22 -22,0 z"
-       style="opacity:0.05;fill:#ffffff;fill-opacity:1;stroke:none" />
+       d="m 5,281 0,14 14,0 0,-14 z m 1,1 12,0 0,12 -12,0 z"
+       style="opacity:0.07999998;fill:#ffffff;fill-opacity:1;stroke:none" />
   </g>
 </svg>
