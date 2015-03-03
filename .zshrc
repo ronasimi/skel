@@ -73,6 +73,13 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
+# ADDITIONAL KEYBINDINGS
+bindkey '\e[1;5C' forward-word            # C-Right		
+bindkey '\e[1;5D' backward-word           # C-Left		
+bindkey '\e[5~'   history-search-backward # PgUp		
+bindkey '\e[6~'   history-search-forward  # PgDn		
+bindkey '^R'      history-incremental-pattern-search-backward
+
 #autoload -U promptinit
 #promptinit
 
