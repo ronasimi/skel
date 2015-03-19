@@ -17,6 +17,7 @@ gtk_color_scheme = "link_color:#08c" # Hyperlinks
 gtk_color_scheme = "bg_color_dark:#3f3f3f\ntext_color_dark:#FFF" # Dark colors
 
 ### EXTERNAL FILES ###
+include "widgets/scrollbar.rc"  # Scrollbar styling
 include "widgets/panel.rc"	# This includes the file that handles the panels.
 
 ### MISC ###
@@ -51,7 +52,7 @@ style "murrine-default" {
 
 	GtkScrollbar	::has-backward-stepper		= 0  
 	GtkScrollbar	::has-forward-stepper		= 0
-	GtkScrollbar	::min-slider-length		= 15
+	GtkScrollbar	::min-slider-length		= 42
 	GtkScrollbar	::slider-width			= 13
 	GtkScrollbar	::trough-border			= 0
 	GtkScrollbar	::activate-slider		= 1
@@ -220,7 +221,7 @@ style "murrine-button" = "murrine-wider" {
   	engine "murrine" {
 		contrast		= .8
 		lightborder_shade	= 1.9
-		roundness		= 2
+		roundness		= 0
 		border_shades		= {0.95, 0.8}
 		shadow_shades		= {1.0, 0.1}
 	}
@@ -241,7 +242,7 @@ style "murrine-notebook" = "murrine-notebook-bg" {
 		gradient_shades		= {1.28,1.28,0.87,0.87}
 		focusstyle		= 2
 		lightborder_shade	= 1.16
-		roundness		= 4
+		roundness		= 0
 	}
 }
 
@@ -493,18 +494,19 @@ style "pixmap-scale" {
 	}
 }
 
-style "murrine-scrollbar" {
-	bg[NORMAL]	= shade (0.90, @bg_color)
-	bg[SELECTED]	= shade (0.6, @base_color)
-	bg[ACTIVE]	= shade (0.8, @bg_color)
-	bg[PRELIGHT]	= shade (0.8, @bg_color)
-	
-	engine "murrine" {
-		roundness	= 8
-		border_shades	= {0.80, 0.80}
-		contrast	= 0.0
-	}
-}
+#style "murrine-scrollbar" {
+#	bg[NORMAL]	= shade (0.90, @bg_color)
+#	bg[SELECTED]	= shade (0.6, @base_color)
+#	bg[ACTIVE]	= shade (1.0, @bg_color)
+#	bg[PRELIGHT]	= shade (1.0, @bg_color)
+#	
+#	engine "murrine" {
+#		roundness	= 8
+#		border_shades	= {0.80, 0.80}
+#		contrast	= 0.0
+#		gradient_shades	= {1.0,1.0,1.0,1.0}
+#	}
+#}
 
 style "murrine-sidebar" {
 	xthickness = 0
@@ -592,9 +594,9 @@ class "GtkScale"	style "pixmap-scale"
 class "GtkVScale"	style "pixmap-scale"
 class "GtkHScale"	style "pixmap-scale"
 
-class "GtkScrollbar"	style "murrine-scrollbar"
-class "GtkVScrollbar"	style "murrine-scrollbar"
-class "GtkHScrollbar"	style "murrine-scrollbar"
+#class "GtkScrollbar"	style "murrine-scrollbar"
+#class "GtkVScrollbar"	style "murrine-scrollbar"
+#class "GtkHScrollbar"	style "murrine-scrollbar"
 
 widget "*ToggleSwitch*"	style "murrine-toggleswitch"
 
