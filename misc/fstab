@@ -1,0 +1,21 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sdb1
+UUID=9312-7A55      				/boot     	vfat      	defaults	0 2
+
+# /dev/sdb2
+UUID=8affceb1-4a27-4e5a-bc0b-ab520613af2b	/         	btrfs     	rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,subvol=_root	0 0
+
+# /dev/sdb2
+UUID=8affceb1-4a27-4e5a-bc0b-ab520613af2b	/home     	btrfs     	rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,subvol=_home	0 0
+
+# /dev/sdb2
+UUID=8affceb1-4a27-4e5a-bc0b-ab520613af2b	/mnt/btrfs_vol	btrfs     	noauto,rw,noatime,compress=lzo,ssd,discard,space_cache,autodefrag,subvolid=0	0 0
+
+# /dev/sda1
+UUID=090c6035-3f72-4268-859c-e561e6c2e5e7	/mnt/storage	ext4		rw,user,users,exec,noatime,data=writeback	0 2
+
+# /dev/sdb3
+UUID=0ddcfc93-9112-43b8-88e4-9f47de190e3a	none      	swap      	defaults  	0 0
